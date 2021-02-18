@@ -1,0 +1,16 @@
+<div class="container">
+
+  <h1>🍹 Cocktails 🍸</h1>
+
+  <div class="row justify-content-center">
+    <div class="col-4">
+    <% @cocktails.each do |cocktail| %>
+      <div>
+        <p>👉 <%= link_to cocktail.name, cocktail_path(cocktail) %></p>
+      </div>
+    <% end %>
+    </div>
+  </div>
+
+  <%= link_to "+ add new cocktail", new_cocktail_path %>
+</div>
