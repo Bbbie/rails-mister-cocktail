@@ -1,23 +1,26 @@
 <div class="container">
   <h1><%= @cocktail.name %></h1>
-
-
-  <p>Ingredients</p>
+  <br>
+  <% if @cocktail.doses.count == 0 %>
+    <p>No ingredients yet.</p>
+  <% else %>
+    <p>Ingredients:</p>
+    <ul>
+      <% @cocktail.doses.each do |dose| %>
+        <li>👉
+          <%= dose.description %> of
+          <%= dose.ingredient.name %> |
+          <%= link_to "delete",
+          cocktail_dose_path(dose),
+          method: :delete,
+          data: { confirm: "Are you sure? This is irreversible." }
+          %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
   <%= link_to "+ Add an ingredient", new_cocktail_dose_path(@cocktail) %>
-  <ul>
-    <% @cocktail.doses.each do |dose| %>
-      <li>
-        <%= dose.ingredient.name %> |
-        <%= dose.id %> |
-        <%= dose.description %> |
-        <%= link_to "delete",
-        cocktail_dose_path(dose),
-        method: :delete,
-        data: { confirm: "Are you sure? This is irreversible." }
-        %>
-      </li>
-    <% end %>
-  </ul>
+  <br>
   <br>
   <%= link_to "< Back to all Cocktails", cocktails_path %>
 </div>
