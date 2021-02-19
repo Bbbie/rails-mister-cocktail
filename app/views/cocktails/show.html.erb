@@ -4,14 +4,14 @@
   <% if @cocktail.doses.count == 0 %>
     <p>No ingredients yet.</p>
   <% else %>
-    <p>Ingredients:</p>
+    <p class='ingredients-title'>Ingredients:</p>
     <ul>
       <% @cocktail.doses.each do |dose| %>
         <li>👉
           <%= dose.description %> of
           <%= dose.ingredient.name %> |
           <%= link_to "delete",
-          cocktail_dose_path(dose),
+          dose_path(dose),
           method: :delete,
           data: { confirm: "Are you sure? This is irreversible." }
           %>
@@ -19,8 +19,12 @@
       <% end %>
     </ul>
   <% end %>
-  <%= link_to "+ Add an ingredient", new_cocktail_dose_path(@cocktail) %>
+  <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
   <br>
   <br>
-  <%= link_to "< Back to all Cocktails", cocktails_path %>
+  <%= link_to "👈 Back to all Cocktails", cocktails_path %>
 </div>
+
+<!-- <i class="far fa-trash-alt"></i> -->
+
+

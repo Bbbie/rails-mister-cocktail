@@ -1,4 +1,32 @@
 <div class="container">
+  <div class="top">
+    <h1>Drinks, drinks, drinks! 🍸</h1>
+    <%= link_to "add a drink", new_cocktail_path, class:"btn btn-primary" %>
+  </div>
+
+  <div class="main-content">
+    <div class="cards">
+      <% @cocktails.each do |cocktail| %>
+
+      <%= link_to cocktail_path(cocktail), class: "cocktail" do %>
+          <div class="card-cocktail">
+            <img class="card-cocktail-image" src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1949&q=80">
+            <div class="card-cocktail-infos">
+              <div>
+                 <h2><%= cocktail.name%></h2>
+                 <p>cocktail.ingredients</p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+<!--
+
+<div class="container">
 
   <h1>🍹 Cocktails, yum 🍸</h1>
   <br>
@@ -14,3 +42,4 @@
   <br>
   <%= link_to "+ add new cocktail", new_cocktail_path %>
 </div>
+ -->

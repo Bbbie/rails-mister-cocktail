@@ -1,2 +1,10 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.cards a {
+  text-decoration: none !important;
+  color: #323232;
+  &:hover {
+    color: #323232;
+  }
+}

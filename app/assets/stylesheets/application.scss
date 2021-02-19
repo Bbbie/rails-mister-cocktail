@@ -11,15 +11,22 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "cocktails";
 
 $blackish: #323232;
 $purple: #6951FF;
 $dark-purple: #5b46dd;
 
+// .custom-cur {
+//   cursor: url('https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/socialmedia/apple/96/cocktail-glass_1f378.png'), auto;
+// }
+
+
 body {
   background-color: #fafafa;
   color: $blackish;
 }
+
 ul {
   list-style: none;
   padding: 0;
