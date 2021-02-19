@@ -10,11 +10,18 @@
 
       <%= link_to cocktail_path(cocktail), class: "cocktail" do %>
           <div class="card-cocktail">
-            <img class="card-cocktail-image" src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1949&q=80">
+            <%= cl_image_tag cocktail.photo.key, class: "card-cocktail-image" %>
             <div class="card-cocktail-infos">
               <div>
-                 <h2><%= cocktail.name%></h2>
-                 <p>cocktail.ingredients</p>
+                <h2><%= cocktail.name%></h2>
+                <p>
+                  <% cocktail.ingredients.each do |ingredient| %>
+                    <%= ingredient.name %>
+                    <% unless ingredient == cocktail.ingredients.last %>
+                      |
+                    <% end %>
+                  <% end %>
+                </p>
               </div>
             </div>
           </div>
@@ -23,6 +30,8 @@
     </div>
   </div>
 </div>
+
+
 
 <!--
 

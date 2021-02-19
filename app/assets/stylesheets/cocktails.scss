@@ -41,6 +41,9 @@
 .cards {
   grid-template-columns: 1fr 1fr;
 }
+.card-cocktail .show-cocktail-image {
+  height: 400px;
+}
 }
 
 @media(max-width: 992px) {
@@ -56,6 +59,9 @@
 .top h1, .btn {
   margin-bottom: 20px;
 }
+.card-cocktail .show-cocktail-image {
+  height: 330px;
+}
 }
 
 @media(max-width: 768px) {
@@ -64,6 +70,9 @@
 }
 .cards {
   grid-template-columns: 1fr;
+}
+.card-cocktail .show-cocktail-image {
+  height: 220px;
 }
 }
 
