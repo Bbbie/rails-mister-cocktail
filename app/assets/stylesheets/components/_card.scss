@@ -1,7 +1,7 @@
 /* Trip Card */
 .card-cocktail {
+  height: 278px;
   background-color: white;
-  position: relative;
   border-radius: 8px;
   transition: all .3s ease-in-out;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15)
@@ -33,29 +33,21 @@
   margin-bottom: 4px;
 }
 
-.card-cocktail h1 {
-  margin: 0;
-  margin-bottom: 16px;
-  font-size: 40px;
-}
-
-.card-cocktail-show-infos {
-  margin: 20px 20px;
-}
-
 .card-cocktail .card-cocktail-infos p {
   margin: 0;
   font-size: 12px;
 }
 
-.card-cocktail .avatar {
-  width: 40px;
-  position: absolute;
-  bottom: 50px;
-  right: 20px;
+// Show page
+
+.card-cocktail-show {
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-.card-cocktail .show-cocktail-image {
+.card-cocktail-show .show-cocktail-image {
   width: 100%;
   height: 550px;
   object-fit: cover;
@@ -63,12 +55,32 @@
   border-top-right-radius: 8px;
 }
 
-.ingredients {
+.card-cocktail-show .card-cocktail-info {
+  margin: 20px;
+}
+
+.card-cocktail-show h1 {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 40px;
+}
+
+ul {
+  margin-bottom: 24px;
+}
+
+li {
+  padding: 4px 0px;
   display: flex;
-  align-items: flex-start;
   justify-content: space-between;
 }
 
-.ingredients-empty {
-  align-items: center;
+li .delete-hide{
+  opacity: 0;
+  transition: ease .3s;
 }
+
+li:hover .delete-hide{
+  opacity: 1;
+}
+

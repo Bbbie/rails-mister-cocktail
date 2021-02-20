@@ -1,20 +1,22 @@
 <div class="container">
-  <div class="card-cocktail">
+  <div class="card-cocktail-show">
     <%= cl_image_tag @cocktail.photo.key, class: "show-cocktail-image" %>
-    <div class="card-cocktail-show-infos">
+    <div class='card-cocktail-info'>
       <h1><%= @cocktail.name %></h1>
-      <div class="ingredients-info">
-        <div class="ingredients-there">
+      <div>
+        <div>
         <% if @cocktail.doses.count == 0 %>
           <p>No ingredients yet.</p>
         <% else %>
           <p class='ingredients-title'>Ingredients:</p>
           <ul>
             <% @cocktail.doses.each do |dose| %>
-              <li>👉
-                <%= dose.description %> of
-                <%= dose.ingredient.name %>  |
-                <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure? This is irreversible." } do %>
+              <li>
+                <div class='dose'> 👉
+                  <%= dose.description %>
+                  <%= dose.ingredient.name %>
+                </div>
+                <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure you want to delete #{dose.ingredient.name} from the ingredients?" } , class: 'delete-hide' do %>
                   <i class="fas fa-trash"></i>
                 <% end %>
               </li>
@@ -22,11 +24,9 @@
           </ul>
         <% end %>
         </div>
-        <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+        <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail), class: "btn-primary-small" %>
       </div>
     </div>
- </div>
-  <br>
-  <br>
+  </div>
   <%= link_to "👈 Back to all Cocktails", cocktails_path %>
 </div>
