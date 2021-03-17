@@ -1,4 +1,4 @@
-/* Trip Card */
+
 .card-cocktail {
   height: 278px;
   background-color: white;
@@ -59,10 +59,18 @@
   margin: 20px;
 }
 
+.card-cocktail-show .card-cocktail-info-show {
+  padding: 40px;
+}
+
 .card-cocktail-show h1 {
   margin: 0;
   margin-bottom: 20px;
   font-size: 40px;
+}
+
+.ingredients-title {
+  margin-bottom: 4px;
 }
 
 ul {

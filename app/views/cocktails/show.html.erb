@@ -1,7 +1,7 @@
 <div class="container">
   <div class="card-cocktail-show">
     <%= cl_image_tag @cocktail.photo.key, class: "show-cocktail-image" %>
-    <div class='card-cocktail-info'>
+    <div class='card-cocktail-info-show'>
       <h1><%= @cocktail.name %></h1>
       <div>
         <div>
@@ -24,7 +24,7 @@
           </ul>
         <% end %>
         </div>
-        <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail), class: "btn-primary-small" %>
+        <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-primary-small" %>
       </div>
     </div>
   </div>
